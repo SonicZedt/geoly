@@ -9,7 +9,8 @@ from dependency import DiscordContainer, ServiceContainer, Provide, inject
 def register(client: Client = Provide[DiscordContainer.client],
 			 aws: AWS = Provide[ServiceContainer.aws]):
 
-	@tasks.loop(seconds=1)
+	local_tz = datetime.datetime.now().astimezone().tzinfo
+	@tasks.loop(time=datetime.time(hour=5, tzinfo=local_tz))
 	async def check_ip():
 		channel = client.get_guild(Guild.id).get_channel(Guild.channel_log_ip)
 		if not channel:
