@@ -1,0 +1,11 @@
+{
+	"logging": {
+		"write": true,
+		"level": "INFO",
+		"writeToChannel": false
+	},
+	"guild": {
+		"id": 1050777842356584538,
+		"channelLogIp": 1347569424000880650
+	}
+}

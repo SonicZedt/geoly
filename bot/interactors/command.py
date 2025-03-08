@@ -1,0 +1,3 @@
+def init():
+	# register all command here
+	...
